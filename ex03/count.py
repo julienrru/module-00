@@ -1,9 +1,10 @@
 import string
+import sys
 def text_analyzer(text):
-    if text is None:
-        text = input("Please enter a string: ")
 
-    if not isinstance(text):
+    
+
+    if not isinstance(text,str):
         print("Error: The argument must be a string.")
         return
 
@@ -26,6 +27,11 @@ def text_analyzer(text):
     print("le nombre de characteres minuscules est:",lower_count)
     print("le nombre d'espace est:",space_count)
     print("le nombre de ponctuation est",punctuation_count)
-if __name__=="__main__":
-    ("text_analyser")
-    print("le nombre de characteres majuscule est:")
+if __name__=="__main__": 
+    try :
+        arguments = sys.argv[1]
+        text_analyzer(arguments)
+    except:
+        text = input("Please enter a string: ")
+        text_analyzer(text)
+
